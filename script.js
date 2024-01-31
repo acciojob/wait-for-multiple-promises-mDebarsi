@@ -1,4 +1,3 @@
-//your JS code here. If required.
 function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
@@ -15,7 +14,7 @@ const promises = [
 
 Promise.all(promises)
   .then(results => {
-    const table = document.getElementById('resultTable');
+    const table = document.getElementById('output');
     table.innerHTML = ''; // Clear the loading row
 
     results.forEach((result, index) => {
@@ -33,6 +32,5 @@ Promise.all(promises)
     const totalCell2 = totalRow.insertCell(1);
     totalCell1.textContent = 'Total';
     totalCell2.textContent = totalTime.toFixed(3);
-
   })
   .catch(error => console.error(error));
